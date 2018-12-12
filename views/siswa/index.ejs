@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Data Siswa</h1>
+    <table bolder="1px">
+        <thead>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Kelas</th>
+            <th>Aksi</th>
+        </thead>
+        <tbody>
+            <% for(let i = 0; i < siswas.length; i++) { %>
+                <tr>
+                    <td><%= siswas[i].nama %></td>
+                    <td><%= siswas[i].alamat %></td>
+                    <td><%= siswas[i].kelas %></td>
+                    <td><a href="/siswas/delete/<%= siswas[i].id %>">Hapus</a></td>
+                </tr>
+            <% } %>
+        </tbody>
+    </table>
+  </body>
+</html>
