@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Edit Siswa</h1>
+    <form action="/siswas/edit/<%= siswa.id %>" method="POST">
+        <label>Nama</label>
+        <input text="text" name="nama" value="<%= siswa.nama %>" />
+        <label>Alamat</label>
+        <input type="text" name="alamat" value="<%= siswa.alamat %>" />
+        <label>Kelas</label>
+        <input type="text" name="kelas" value="<%= siswa.kelas %>">
+        <button type="submit">Simpan</button>
+    </form>
+  </body>
+</html>

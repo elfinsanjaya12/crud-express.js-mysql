@@ -5,6 +5,7 @@
   </head>
   <body>
     <h1>Data Siswa</h1>
+    <a href="/siswas/create">Tambah</a>
     <table bolder="1px">
         <thead>
             <th>Nama</th>
@@ -18,7 +19,10 @@
                     <td><%= siswas[i].nama %></td>
                     <td><%= siswas[i].alamat %></td>
                     <td><%= siswas[i].kelas %></td>
-                    <td><a href="/siswas/delete/<%= siswas[i].id %>">Hapus</a></td>
+                    <td>
+                        <a href="/siswas/delete/<%= siswas[i].id %>">Hapus</a>
+                        <a href="/siswas/edit/<%= siswas[i].id %>">Edit</a>
+                    </td>
                 </tr>
             <% } %>
         </tbody>
