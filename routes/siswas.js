@@ -1,18 +1,20 @@
 var express = require('express');
 var router = express.Router();
 var models = require('../models')
+const { checkAuth } = require('../middlewares/auth')
 /* GET users listing. */
 
-router.get('/', function(req, res, next) {
+router.get('/', checkAuth, function(req, res, next) {
+  const user = req.session.user
   models.Siswa.findAll().then(siswas => {
-    res.render('siswa/index', {siswas: siswas})
+    res.render('siswa/index', {siswas: siswas, user: user})
   }).catch(err => {
     console.log(err)
     res.render('siswa/index')
   })
 });
 
-router.get('/create', (req,res) => {
+router.get('/create', checkAuth, (req,res) => {
   res.render('siswa/create')
 })
 
